@@ -37,6 +37,11 @@ export class MainPageComponent implements OnInit {
     
   }
 
+  public nuevo:Personaje = {
+    nombre:'Maestro Roshi',
+    poder:1000
+  }
+
   constructor() { }
 
   ngOnInit(): void {
