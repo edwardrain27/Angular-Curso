@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Personaje } from '../interfaces/dbz.interfaces';
 
 
-interface Personaje{
-  nombre: string;
-  poder: number;
-}
+
 
 @Component({
   selector: 'app-main-page',
@@ -15,11 +13,9 @@ interface Personaje{
 
 export class MainPageComponent implements OnInit {
 
+  //clase principal donde se inicializan los arreglos de personaje.
 
-  public nuevo:Personaje = {
-    nombre: '',
-    poder: 0,
-  }
+ 
 
   public personajes:Personaje[] = [
     {
@@ -32,33 +28,13 @@ export class MainPageComponent implements OnInit {
     }
   ];
 
-  public agregar( ) 
-  {
-    //este evento se activa cuando se da al submit del formulario. Es decir, en el botón.
-    //a la vez prevee el refresco de la página, de tal manera que evita el refresco.
-    //trim() elimina los espacios en blanco.
-    if ( this.nuevo.nombre.trim().length === 0)
-    {
-      return;
-    }
-    //agrego al personaje 
-    this.personajes.push(this.nuevo);
-    this.nuevo = {
-      nombre:'',
-      poder: 0
-    }
-    
-    
-    console.log( this.nuevo );
-    
-  }
-
+ 
   //esta funcion se le pasa como parámetro al evento (input)
   public cambiarNombre( event: any)
   {
     //este evento se ejecuta cuando se escribe en la caja de texto.
     console.log( event.target.value );
-    console.log(this.nuevo.nombre);
+    
   }
 
   constructor() { }

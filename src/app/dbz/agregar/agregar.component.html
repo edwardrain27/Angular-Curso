@@ -1,0 +1,18 @@
+<h3>Agregar {{nuevo.nombre}}</h3>
+        <hr>
+
+        <!--Vemos que al llamar el evento, recibimos toda la información del evento-->
+        <!--La ifnormación del evento se recibe con el signo de(dolar) $-->
+        <form (ngSubmit) = "agregar();">
+            <input placeholder = "Nombre" type="text" name="nombre" [(ngModel)] = "nuevo.nombre">
+            <input placeholder = "Poder"   type="number" name = "poder"  [(ngModel)] = "nuevo.poder">
+            
+            <button>
+                agregar
+            </button>
+        </form>
+
+  <!--
+                [value] = "nuevo.nombre" apunta a
+                (input) = "cambiarNombre( $event )"
+            -->

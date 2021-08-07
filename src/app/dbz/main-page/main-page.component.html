@@ -5,30 +5,14 @@
 
 <div class = "row"> 
     <div class = "col">
-        <app-personajes></app-personajes>
+        <app-personajes [personajes] = "personajes">
+
+        </app-personajes>
     </div>
 
     <div class = "col">
-        <h3>Agregar {{nuevo.nombre}}</h3>
-        <hr>
-
-        <!--Vemos que al llamar el evento, recibimos toda la información del evento-->
-        <!--La ifnormación del evento se recibe con el signo de(dolar) $-->
-        <form (ngSubmit) = "agregar();">
-            <input placeholder = "Nombre" type="text" name="nombre" [(ngModel)] = "nuevo.nombre">
-            <input placeholder = "Poder"   type="number" name = "poder"  [(ngModel)] = "nuevo.poder">
-            
-            <!--
-                [value] = "nuevo.nombre" apunta a
-                (input) = "cambiarNombre( $event )"
-            -->
-            
-            <button>
-                agregar
-            </button>
-        </form>
-
-
+        <app-agregar [personajes] = "personajes"></app-agregar>
+        
     </div>
 
 </div>
