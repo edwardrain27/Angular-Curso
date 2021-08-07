@@ -1,2 +1,40 @@
 <h1>Dragon ball Z</h1>
 <hr>
+
+
+
+<div class = "row"> 
+    <div class = "col">
+        <h3>Personajes</h3>
+        
+        <ul>
+            <li>Krilin - 700</li>
+            <li>Goku - 15,000</li>
+            <li>Vegeta - 8,500</li>
+        </ul>
+    </div>
+
+    <div class = "col">
+        <h3>Agregar {{nuevo.nombre}}</h3>
+        <hr>
+
+        <!--Vemos que al llamar el evento, recibimos toda la información del evento-->
+        <!--La ifnormación del evento se recibe con el signo de(dolar) $-->
+        <form (ngSubmit) = "agregar();">
+            <input placeholder = "Nombre" type="text" name="nombre" [(ngModel)] = "nuevo.nombre">
+            <input placeholder = "Poder"   type="number" name = "poder"  [(ngModel)] = "nuevo.poder">
+            
+            <!--
+                [value] = "nuevo.nombre" apunta a
+                (input) = "cambiarNombre( $event )"
+            -->
+            
+            <button>
+                agregar
+            </button>
+        </form>
+
+
+    </div>
+
+</div>
