@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Personaje } from '../interfaces/dbz.interfaces';
+import { DbzService } from '../services/dbz.service';
 
 
 
@@ -10,8 +11,7 @@ import { Personaje } from '../interfaces/dbz.interfaces';
   styleUrls: ['./main-page.component.css']
 })
 
-
-export class MainPageComponent implements OnInit {
+export class MainPageComponent  {
 
   //clase principal donde se inicializan los arreglos de personaje.
 
@@ -30,11 +30,11 @@ export class MainPageComponent implements OnInit {
 
  
   //esta funcion se le pasa como parámetro al evento (input)
-  public cambiarNombre( event: any)
-  {
-    //este evento se ejecuta cuando se escribe en la caja de texto.
-    console.log( event.target.value );
-    
+  
+
+  nuevo:Personaje = {
+    nombre:'Maestro Roshi',
+    poder:1000
   }
 
   public agregarNuevoPersonaje( argumento:Personaje)
@@ -43,14 +43,14 @@ export class MainPageComponent implements OnInit {
     this.personajes.push( argumento );
   }
 
-  public nuevo:Personaje = {
-    nombre:'Maestro Roshi',
-    poder:1000
-  }
 
-  constructor() { }
+  constructor( 
+    private dbzService:DbzService )
+    {}
+  
 
-  ngOnInit(): void {
-  }
+ 
+
+ 
 
 }
