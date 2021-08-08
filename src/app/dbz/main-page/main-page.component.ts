@@ -37,6 +37,12 @@ export class MainPageComponent implements OnInit {
     
   }
 
+  public agregarNuevoPersonaje( argumento:Personaje)
+  {
+    console.log( argumento );
+    this.personajes.push( argumento );
+  }
+
   public nuevo:Personaje = {
     nombre:'Maestro Roshi',
     poder:1000

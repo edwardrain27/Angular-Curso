@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Personaje } from '../interfaces/dbz.interfaces';
 
 @Component({
@@ -12,10 +12,7 @@ export class AgregarComponent {
       nombre:'',
       poder: 0
     }
-  
-     
-    @Input() personajes:Personaje[] = []
-
+    @Output() onNuevoPersonaje:EventEmitter<Personaje>= new EventEmitter();
 
     public agregar( ) 
   {
@@ -27,13 +24,13 @@ export class AgregarComponent {
       return;
     }
     //agrego al personaje 
-    this.personajes.push(this.nuevo);
+    console.log(this.nuevo );
+    //esta propiedad me emite un objeto del tipo Personaje.
+    this.onNuevoPersonaje.emit( this.nuevo );
     this.nuevo = {
       nombre:'',
       poder: 0
     }
-    
-    console.log( this.personajes );
     
   }
 
